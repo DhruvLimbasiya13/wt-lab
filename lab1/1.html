@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        const first_number = parseFloat(prompt("Enter the first number:"));
+        const second_number = parseFloat(prompt("Enter the second number:"));
+        const operation = prompt("Enter the operation (+, -, *, /):");
+        let result;
+        switch (operation) {
+            case '+':
+                result = first_number + second_number;
+                break;
+            case '-':
+                result = first_number - second_number;
+                break;
+            case '*':
+                result = first_number * second_number;
+                break;
+            case '/':
+                if (second_number !== 0) {
+                    result = first_number / second_number;
+                } else {
+                    result = "Error: Division by zero is not allowed.";
+                }
+                break;
+            default:
+                result = "Error: Invalid operation.";
+        }
+        alert(result);
+        console.log(result);
+    </script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: floralwhite;
+        }
+        .profile-container{
+            display: flex;
+        }
+
+        .profile-info {
+            background-color:floralwhite;
+            justify-content: left;
+            width: 50%;
+        }
+
+        .profile img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            border: 2px solid #000;
+            margin-left: 150px;
+            margin-top: 20px;
+            
+        }
+        .profile{
+            width: 50%;
+        }
+
+
+        .skill-container{
+            display: flex;
+            justify-content: space-evenly;
+            gap: 1rem;
+            border:solid black;
+            border-radius: 5px;
+            padding: 1rem;
+        }
+
+
+        .skills {
+            display: flex;
+            flex-direction: column;
+            /* width: 50%; */
+            /* float: right; */
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <div class="profile"><img src="47ba71f457434319819ac4a7cbd9988e.jpg" alt="profile photo"></div>
+        <div class="profile-info">
+            <div>
+                <h1>Dhruv Limbasiya</h1>
+                <h4>Web Developer Resume</h4>
+                <p>Contact Information:</p>
+                <p>Email:limbasiyadhruv@gmail.com</p>
+                <p>Phone: +91 1234567890</p>
+                <p>LinkedIn: linkedin.com/in/dhruv-limbasiya</p>
+                <p>GitHub: github.com/dhruv-limbasiya</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="wrapper">
+
+        <div class="skill-container">
+            <div class="Education">
+                <h2>Education</h2>
+                <p>Bachelor of Technology in Computer Science</p>
+                <p>XYZ University, 2020</p>
+                <p>Relevant Coursework: Web Development, Database Management, Software Engineering</p>
+            </div>
+            
+            <div class="skills">
+                <h2>skills</h2>
+                <div>
+                    <li>JavaScript</li>
+                    <li>React.js</li>
+                </div>
+                <div>
+                    <li>Node.js</li>
+                    <li>Express.js</li>
+                </div>
+                <div>
+                    <li>MongoDB</li>
+                    <li>Git & GitHub</li>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <script type="text/javascript">
+        const number =parseFloat(prompt("Enter a number:"));
+        var factorial = 0;
+        if (number < 0) {
+            factorial = "Error: Factorial of a negative number is not defined.";
+        } else if (number === 0 || number === 1) {
+            factorial = 1;
+        } else {
+            factorial = 1;
+            for (let i = 2; i <= number; i++) {
+                factorial *= i;
+            }
+        }
+        alert(`The factorial of ${number} is ${factorial}.`);
+        document.write("The factorial of "+number+ " is "+factorial+".");
+    </script>
+</body>
+</html>

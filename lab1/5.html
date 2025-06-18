@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var number = parseFloat(prompt("Enter a number:"));
+        let reversedNumber = 0;
+        let originalNumber = number;
+        while (number !== 0) {
+            const digit = number % 10;
+            reversedNumber = reversedNumber * 10 + digit;
+            number = Math.floor(number / 10);
+        }
+        if(originalNumber == reversedNumber) {
+            alert(`${originalNumber} is a palindrome.`);
+            document.write(`${originalNumber} is a palindrome.`);
+        } else {
+            alert(`${originalNumber} is not a palindrome.`);
+            document.write(`${originalNumber} is not a palindrome.`);
+        }
+    </script>
+</body>
+</html>
