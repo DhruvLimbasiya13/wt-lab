@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit="validate(event)">
+        <p>
+            <label for="">Name : </label>
+            <input type="text" id="username" placeholder="username" name="username">
+        </p>
+
+        <p>
+            <label for="">password : </label>
+            <input type="password" id="password" placeholder="password" name="password">
+        </p>
+
+        <p>
+            <label for="">conform password : </label>
+            <input type="password" id="conformpassword" placeholder="comfrom password" name="repeatpassword">
+        </p>
+
+        <p>
+            <label for="">enrollment : </label>
+            <input type="text" id="enrollment" placeholder="enrollment" name="enrollment">
+        </p>
+
+        <p>
+            <label for="">email : </label>
+            <input type="text" id="email" placeholder="email" name="email">
+        </p>
+
+        <p>
+            <label for="">date : </label>
+            <input type="text" id="date" placeholder="date" name="date">
+        </p>
+        <button type="submit" id="sub" name="sub">submit</button>
+    </form>
+
+    <script>
+        function validate(e){
+            e.preventDefault();
+            //validate username
+            var refOfUsername = document.getElementById("username");
+            console.log(refOfUsername.value)
+            pattern1 = "^[a-zA-Z_.]{8,}$"
+            reg1=new RegExp(pattern1);
+            if( !reg1.test(refOfUsername.value)){
+                alert("invalid username type")
+            }
+
+            //validate password
+            var refOfPassword = document.getElementById("password");
+            pattern2 = '^(?=.\d)(?=.[!@#$%^&])[A-Za-z\d!@#$%^&]{8,12}$';
+            reg2=new RegExp(pattern2);
+            if(!reg2.test(refOfPassword.value)){
+                alert("invalid username type")
+            }
+        }
+    </script>
+</body>
+</html>

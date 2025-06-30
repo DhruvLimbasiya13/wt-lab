@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Done with getElementById</h1>
+    <input type="text" id="username" placeholder="username">
+    <input type="password" id="password" placeholder="password">
+    <button type="button" onclick="first()">submit</button>
+
+    <form name="form_login">
+        <h1>Done with getElementByName</h1>
+        <input type="text" name="username" placeholder="username">
+        <input type="password" name="password" placeholder="password">
+        <button type="button" onclick="second()">submit</button>
+    </form>
+
+    <script>
+        function first()
+        {
+            var refOfUsername = document.getElementById("username");
+            var refOfPassword = document.getElementById("password");
+
+            if(refOfUsername.value === 'Dhruv Limbasiya' && refOfPassword.value === 'LimbasiyaDhruv7'){
+                alert("login successfull");
+            }
+            else{
+                alert("invalid username or password");l̥ō
+            }
+        }
+        function second()
+        {   var refOfForm = document.forms["form_login"];
+            var refOfUsername = refOfForm.username.value;
+            var refOfPassword = refOfForm.password.value;
+
+            if(refOfUsername == 'Dhruv Limbasiya' && refOfPassword == 'LimbasiyaDhruv7'){
+                alert("login successfull");
+            }
+            else{
+                alert("invalid username or password");
+            }
+        }
+    </script>
+</body>
+</html>

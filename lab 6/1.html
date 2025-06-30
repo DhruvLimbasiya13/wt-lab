@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="startchanging()">start</button>
+    <button onclick="stopchanging()">stop</button>
+
+    <script>
+        let c
+        function changecolor(){
+            let r = parseInt((Math.random())*256);
+            let g = parseInt((Math.random())*256);
+            let b = parseInt((Math.random())*256);
+
+            document.body.style.backgroundColor = 'rgb('+r+','+g+','+b+')';
+        }
+
+        function startchanging(){
+            c = setInterval(changecolor , 1000);
+        }
+
+        function stopchanging(){
+            clearInterval(c);
+        }
+    </script>
+</body>
+</html>
