@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <p>The result of the calculation is:</p>
+    <p id="demo"></p>
+
+    <script>
+        function myDisplayer(something) {
+            document.write(something);
+        }
+
+        function myCalculator(num1, num2, myDisplayer) {
+            let sum = num1 + num2;
+            myDisplayer(sum);
+        }
+
+        myCalculator(10, 5, myDisplayer);
+    </script>
+
+</body>
+
+</html>
