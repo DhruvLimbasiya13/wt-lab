@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function findWordIndex(sentenceArray, targetWord) {
+            for (let i = 0; i < sentenceArray.length; i++) {
+                if (sentenceArray[i] === targetWord) {
+                    return i;
+                }
+            }
+            return -1;
+        }
+
+        let sentence = ["The", "quick", "brown", "fox", "jumps"];
+        let wordToFind = "fox";
+        let index = findWordIndex(sentence, wordToFind);
+        console.log("Index of word:", index);
+    </script>
+
+</body>
+
+</html>

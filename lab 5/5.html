@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form onsubmit="return validate(event)">
+        Enrollment: <input type="text" id="enrollment"><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        function validate(e) {
+            e.preventDefault();
+
+            var refOfEnrollment = document.getElementById("enrollment");
+            var pattern3 = /^\d{11}$/;
+            var reg3 = new RegExp(pattern3);
+            if (!reg3.test(refOfEnrollment.value)) {
+                alert("Invalid enrollment number: must be exactly 11 digits.");
+                return false;
+            }
+
+            alert("Form submitted successfully!");
+            return true;
+        }
+
+    </script>
+</body>
+
+</html>
