@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student List</title>
+</head>
+
+<body>
+    <input id="inputtag" placeholder="Enter student">
+    <button onclick="addStudent()">ADD</button>
+
+    <div id="displayArea"></div>
+
+    <script>
+        let students = ['1', '2', '3'];
+        let editIndex = -1; // -1 means adding new student
+
+        function addStudent() {
+            let input = document.getElementById("inputtag");
+            let value = input.value;
+
+            if (value !== "") {
+                if (editIndex === -1) {
+                    // Add new student
+                    students.push(value);
+                } else {
+                    // Update existing student
+                    students[editIndex] = value;
+                    editIndex = -1; // Reset after editing
+                }
+                input.value = "";
+            }
+            display();
+        }
+
+        function deleteStudent(index) {
+            students.splice(index, 1);
+            display();
+        }
+
+        function editStudent(index) {
+            document.getElementById("inputtag").value = students[index];
+            editIndex = index; // store which student to edit
+        }
+
+        function display() {
+            let table = "<table border='1'><tr><th>Students</th><th>Actions</th></tr>";
+            for (let i = 0; i < students.length; i++) {
+                table += "<tr><td>" + students[i] + "</td>" +
+                    "<td>" +
+                    "<button onclick='editStudent(" + i + ")'>Edit</button> " +
+                    "<button onclick='deleteStudent(" + i + ")'>Delete</button>" +
+                    "</td></tr>";
+            }
+            table += "</table>";
+            document.getElementById("displayArea").innerHTML = table;
+        }
+
+        display();
+    </script>
+</body>
+
+</html>
