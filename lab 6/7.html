@@ -28,7 +28,7 @@
                 } else {
                     // Update existing student
                     students[editIndex] = value;
-                    editIndex = -1; // Reset after editing
+                    editIndex = -1;
                 }
                 input.value = "";
             }
@@ -42,7 +42,7 @@
 
         function editStudent(index) {
             document.getElementById("inputtag").value = students[index];
-            editIndex = index; // store which student to edit
+            editIndex = index;
         }
 
         function display() {
