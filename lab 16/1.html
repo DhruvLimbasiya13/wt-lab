@@ -10,56 +10,26 @@
 <body>
     <button id="mystudent" onclick="abc()">Student</button>
     <div id="loadData"></div>
-<script>
-    // <!-- <script src="https://code.jquery.com/jquery-3.7.1.js"
-    //     integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"> -->
 
-            // $("#mystudent").click(
-            //     function () {
-            //         const xhttp = new XMLHttpRequest();
-            //         xhttp.onload = function () {
-            //             data = JSON.parse(this.responseText);
-            //             console.log(data)
-            //             formatedStudent = data.map((s) => {
-            //                 let ans = "<tr>";
-            //                 ans += "<td>";
-            //                 ans += s.id;
-            //                 ans += "</td>";
-            //                 ans += "<td>";
-            //                 ans += s.name;
-            //                 ans += "</td>";
-            //                 ans += "</tr>";
-            //                 return ans;
-            //             })
-            //             document.getElementById("loadData").innerHTML = "<table border = '1'>" + formatedStudent.join(" ") + "</table>";
-            //         }
-            //         xhttp.open("GET","https://6854ebc76a6ef0ed663089d8.mockapi.io/student",true);
-            //         xhttp.send();
-            //     }
-            // )
-            function abc(){
-                 const xhttp = new XMLHttpRequest();
-                    xhttp.onload = function () {
-                        data = JSON.parse(this.responseText);
-                        console.log(data)
-                        formatedStudent = data.map((s) => {
-                            let ans = "<tr>";
-                            ans += "<td>";
-                            ans += s.id;
-                            ans += "</td>";
-                            ans += "<td>";
-                            ans += s.name;
-                            ans += "</td>";
-                            ans += "</tr>";
-                            return ans;
-                        })
-                        document.getElementById("loadData").innerHTML = "<table border = '1'>" + formatedStudent.join(" ") + "</table>";
-                    }
-                    xhttp.open("GET","https://6854ebc76a6ef0ed663089d8.mockapi.io/student",true);
-                    xhttp.send();
-                } 
-            
-        </script>
+    <script>
+        function abc() {
+            const xhttp = new XMLHttpRequest();
+
+            xhttp.onload = function () {
+                const data = JSON.parse(this.responseText);
+                const formatedStudent = data.map((s) => {
+                    let ans = "<tr>";
+                    ans += "<td>" + s.id + "</td>";
+                    ans += "<td>" + s.name + "</td>";
+                    ans += "</tr>";
+                    return ans;
+                });
+                document.getElementById("loadData").innerHTML = "<table border='1'>" + formatedStudent.join('') + "</table>";
+            }
+            xhttp.open("GET", "https://6854ebc76a6ef0ed663089d8.mockapi.io/student", true);
+            xhttp.send();
+        }
+    </script>
 </body>
 
 </html>
