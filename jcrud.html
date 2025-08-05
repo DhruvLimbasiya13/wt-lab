@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <script>
+        Facultys = [
+            { name: "arjun", id: 101, dept: "CSE", imageUrl: "https://du-website.s3.ap-south-1.amazonaws.com/U01/Faculty-Photo/15---28-04-2023-02-07-35.jpg" },
+            { name: "wasimsir", id: 102, dept: "MECH", imageUrl: "https://du-website.s3.ap-south-1.amazonaws.com/U01/Faculty-Photo/317---28-04-2023-01-32-29.jpg" }
+        ];
+
+        $(document).ready(function () {
+            displayData();
+
+            $("#saveFaculty").click(function () {
+                let id = $("#txtid").val();
+                let name = $("#txtName").val();
+                let dept = $("#txtDept").val();
+                let imageUrl = $("#txtImagaeUrl").val();
+
+                if(id=="" ||name ==""||dept =="" ||imageUrl ==""){
+                    return
+                }
+
+                let data = { id, name, dept, imageUrl };
+                Facultys.push(data);
+                $("#saveFaculty").val("Add Faculty");
+                displayData();
+                $("#txtid").val("");
+                $("#txtName").val("");
+                $("#txtDept").val("");
+                $("#txtImagaeUrl").val("");
+            })
+        });
+
+
+        function displayData() {
+            let formatedData = Facultys.map((s) => {
+                let temp = "<tr>";
+                temp += "<td>" + s.id + "</td>";
+                temp += "<td>" + s.name + "</td>";
+                temp += "<td>" + s.dept + "</td>";
+                temp += "<td><img width='50px' src='" + s.imageUrl + "'/></td>";
+                temp += "<td><button style='margin-right: 5px;' onclick='editFaculty(" + s.id + ")'>Edit</button><button onclick='deleteFaculty(" + s.id + ")'>Delete</button></td>";
+                temp += "</tr>";
+                return temp;
+            });
+
+            let finalData = "<table border=1>" + formatedData.join("") + "</table>";
+            $("#dataDisplay").html(finalData);
+        }
+
+        function deleteFaculty(id) {
+            const indexToDelete = Facultys.findIndex((s) => {
+                return s.id == id
+            });
+            Facultys.splice(indexToDelete, 1)
+            displayData();
+        }
+
+        function editFaculty(id) {
+            const indexToEdit = Facultys.findIndex(s => s.id == id);
+            const faculty = Facultys[indexToEdit];
+
+            $("#txtid").val(faculty.id);
+            $("#txtName").val(faculty.name);
+            $("#txtDept").val(faculty.dept);
+            $("#txtImagaeUrl").val(faculty.imageUrl);
+
+            $("#editIndex").val(indexToEdit);
+
+            $("#saveFaculty").val("Update Faculty");
+}
+    </script>
+
+    <table>
+        <tr>
+            <td>Enter Faculty Id</td>
+            <td>:</td>
+            <td><input type="text" id="txtid" /></td>
+        </tr>
+        <tr>
+            <td>Enter Name</td>
+            <td>:</td>
+            <td><input type="text" id="txtName" /></td>
+        </tr>
+        <tr>
+            <td>Enter Department</td>
+            <td>:</td>
+            <td><input type="text" id="txtDept" /></td>
+        </tr>
+        <tr>
+            <td>Enter Image Path</td>
+            <td>:</td>
+            <td><input type="text" id="txtImagaeUrl" /></td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <input type="button" id="saveFaculty" value="Add Faculty" />
+            </td>
+        </tr>
+    </table>
+
+    <h1>List of Faculty</h1>
+    <div id="dataDisplay">
+
+    </div>
+</body>
+
+</html>
