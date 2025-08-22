@@ -1,33 +1,30 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import Lab_18_1 from './lab-18/Lab_18_1'
+import Lab_18_2 from './lab-18/Lab_18_2'
+import Lab_18_3 from './lab-18/Lab_18_3'
+import Lab_18_4 from './lab-18/Lab_18_4'
+
+function AddToNumbers(props){
+  return (
+    <>
+    <h1>{props.num1+props.num2}</h1>
+    <button on={()=>{
+      alert('clicked')
+    }}></button>
+
+    {props.isDisplay && <h2>secret</h2>}
+    </>
+  )
+}
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    {/* <Lab_18_1/> */}
+    {/* <Lab_18_2/> */}
+    {/* <Lab_18_3/> */}
+    <Lab_18_4/>
     </>
   )
 }
